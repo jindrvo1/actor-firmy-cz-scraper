@@ -27,8 +27,8 @@ const extractData = () => {
     const rating = $('[itemprop="ratingValue"]').attr('content');
     const rCount = $('[itemprop="ratingCount"]').text().trim();
     const ratingCount = rCount ? parseInt(rCount) : 0;
-    const phone = $('[itemprop="telephone"]').text().trim();
-    const emails = $('.companyMail').toArray().map(e => e.textContent.trim());
+    const phone = $('.detailPhonePrimary').text().trim();
+    const emails = $('.detailEmail').toArray().map(e => e.textContent.trim());
     const websites = $('.companyUrl').toArray().map(e => e.textContent.trim());
     const result = {
         "title": title,
