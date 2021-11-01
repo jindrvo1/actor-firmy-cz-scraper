@@ -18,12 +18,12 @@ const isObject = (val) => typeof val === 'object' && val !== null && !Array.isAr
 
 // Company page data extraction
 const extractData = () => {
-    const title = $('[itemprop="name"]').text().trim();
-    const address = $('[itemprop="address"]').text().trim();
+    const title = $('.detailPrimaryTitle').text().trim();
+    const address = $('.detailAddress').text().trim();
     const lat = $('[itemprop="latitude"]').attr('content');
     const lon = $('[itemprop="longitude"]').attr('content');
     const desc = $('[itemprop="description"]').text().trim();
-    const categories = $('.category').toArray().map(c => c.textContent.trim());
+    const categories = $('.detailCategories').toArray().map(c => c.textContent.trim());
     const rating = $('[itemprop="ratingValue"]').attr('content');
     const rCount = $('[itemprop="ratingCount"]').text().trim();
     const ratingCount = rCount ? parseInt(rCount) : 0;
